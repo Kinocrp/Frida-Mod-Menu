@@ -29,7 +29,7 @@ JavaIl2CppPerform(async () => {
 });
 
 async function main() {
-      const MainActivity = await getActivity(APP_MAIN_ACTIVITY);
+    const MainActivity = await getActivity(APP_MAIN_ACTIVITY);
 
     const Menu = Java.use('com.kinocrp.fmenu.Menu');
     const PInteger = Java.use('com.kinocrp.fmenu.PInteger');
