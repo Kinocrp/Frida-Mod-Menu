@@ -1,0 +1,10 @@
+{
+  "main": "src/index.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "compile": "frida-compile src/index.ts -w -o agent.js"
+  },
+  "dependencies": {
+    "frida-il2cpp-bridge": "^0.12.0"
+  }
+}
