@@ -13,8 +13,6 @@ An android mod menu using **Frida** with in-memory Dex loading and runtime hooki
 - **TextViews** (display rich text)
 - **WebView** (display web page with real html/css)
 
-... and more see the [source]() code or the [javadoc]() for more information.
-
 ## Credits
 
 - [LGLTeam](https://github.com/LGLTeam/Android-Mod-Menu) for the original **Android-Mod-Menu**.
