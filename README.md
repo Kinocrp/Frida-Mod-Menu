@@ -1,5 +1,5 @@
 # Frida Mod Menu
-An android mod menu using **Frida** with in-memory Dex loading and runtime hooking for **Android Games** inspired by **[frida-android-mod-menu](https://github.com/maarsalien/frida-android-mod-menu/)** by [maarsalien](https://github.com/maarsalien).
+An android mod menu using **Frida** with in-memory Dex loading and runtime hooking for **Android Games**.
 
 ## Features
 
@@ -16,4 +16,3 @@ An android mod menu using **Frida** with in-memory Dex loading and runtime hooki
 ## Credits
 
 - [LGLTeam](https://github.com/LGLTeam/Android-Mod-Menu) for the original **Android-Mod-Menu**.
-- [maarsalien](https://github.com/maarsalien) for the original **frida-android-mod-menu**.
