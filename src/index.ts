@@ -34,6 +34,7 @@ async function main() {
     const Menu = Java.use('com.kinocrp.fmenu.Menu');
     const PInteger = Java.use('com.kinocrp.fmenu.PInteger');
     const PBoolean = Java.use('com.kinocrp.fmenu.PBoolean');
+    const PString = Java.use('com.kinocrp.fmenu.PString');
     const menu = Menu.$new(MainActivity);
 
     Java.scheduleOnMainThread(() => {
