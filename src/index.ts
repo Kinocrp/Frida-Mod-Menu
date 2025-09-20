@@ -1,5 +1,5 @@
 import "frida-il2cpp-bridge"
-import {getActivity, JavaIl2CppPerform, ensureModulesInitialized} from './util.ts';
+import { getActivity, JavaIl2CppPerform, ensureModulesInitialized } from './util.ts';
 
 const APP_MAIN_ACTIVITY = 'com.unity3d.player.UnityPlayerActivity';
 const ESP_FPS = 90;
