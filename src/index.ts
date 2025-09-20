@@ -2,7 +2,7 @@ import "frida-il2cpp-bridge"
 import {getActivity, JavaIl2CppPerform, ensureModulesInitialized} from './util.ts';
 
 const APP_MAIN_ACTIVITY = 'com.unity3d.player.UnityPlayerActivity';
-const ESP_FPS = 120;
+const ESP_FPS = 90;
 const ESP_REFRESH_RATE = 1000 / ESP_FPS;
 const modules = ['libil2cpp.so'];
 
@@ -47,13 +47,16 @@ async function main() {
 
         const width = this.getWidth();
         const height = this.getHeight();
-        this.DrawText(canvas, 255, 255, 255, 255, "Modded By Kinocrp", width - 250, height - 25, 30);
+        this.DrawText(canvas, 255, 255, 255, 255, "Modded By Kinocrp", width - 250, height - 15, 30);
     };
 
     Java.scheduleOnMainThread(() => {
         menu.attach();
         rootView.addView(espView);
+        const refreshESP = () => {
+            espView.postInvalidate();
+            setTimeout(refreshESP, ESP_REFRESH_RATE);
+        };
+        refreshESP();
     });
-
-    setInterval(() => { Java.scheduleOnMainThread(() => { espView.postInvalidate(); }); }, ESP_REFRESH_RATE);
 }
