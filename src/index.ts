@@ -2,9 +2,8 @@ import "frida-il2cpp-bridge"
 import { getActivity, JavaIl2CppPerform, ensureModulesInitialized } from './util.ts';
 
 const APP_MAIN_ACTIVITY = 'com.unity3d.player.UnityPlayerActivity';
-const ESP_FPS = 90;
-const ESP_REFRESH_RATE = 1000 / ESP_FPS;
 const modules = ['libil2cpp.so'];
+const ESP_REFRESH_RATE = 10;
 
 declare const Java: any;
 
@@ -42,6 +41,8 @@ async function main() {
     const espView = ESPView.$new(MainActivity);
     const rootView = Java.cast(MainActivity.getWindow().getDecorView().getRootView(), Java.use('android.view.ViewGroup'));
 
+    espView.setFPS(ESP_REFRESH_RATE);
+
     ESPView.onDraw.implementation = function(canvas: any) {
         this.onDraw(canvas);
 
@@ -53,10 +54,5 @@ async function main() {
     Java.scheduleOnMainThread(() => {
         menu.attach();
         rootView.addView(espView);
-        const refreshESP = () => {
-            espView.postInvalidate();
-            setTimeout(refreshESP, ESP_REFRESH_RATE);
-        };
-        refreshESP();
     });
 }
