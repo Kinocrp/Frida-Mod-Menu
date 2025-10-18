@@ -1,7 +1,7 @@
 {
   "main": "src/index.ts",
   "scripts": {
-    "compile": "frida-compile src/index.ts -w -o agent.js"
+    "compile": "frida-compile src/index.ts -w -o dist/agent.js"
   },
   "dependencies": {
     "frida-il2cpp-bridge": "^0.12.0"

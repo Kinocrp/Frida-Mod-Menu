@@ -21,11 +21,12 @@ export async function ensureModulesInitialized(...modules: string[]) {
     while (modules.length > 0) {
         const md = modules.pop();
         if (!md) return;
-
-        if (!Process.getModuleByName(md)) {
-            console.log(`Waiting for ${md} to be initialized...`);
+        try {
+            Process.getModuleByName(md);
+        } catch (e) {
             await sleep(100);
             modules.push(md);
+            continue;
         }
     }
 }
